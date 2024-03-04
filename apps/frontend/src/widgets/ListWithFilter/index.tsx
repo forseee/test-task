@@ -13,7 +13,7 @@ const ListWithFilter = () => {
     FormDataEntryValue | null
   > | null>(null);
   const [openDialog, setOpenDialog] = useState(false);
-  const { data, isLoading, isError } = useApi<IResponce<IAd>>('/api/ads', {
+  const { data, isLoading } = useApi<IResponce<IAd>>('/api/ads', {
     params,
   });
   const [likedItems, setLikedItems] = useState<Array<string>>([]);
@@ -73,7 +73,6 @@ const ListWithFilter = () => {
           listOfAds={data && data.results}
           likedItems={likedItems}
           isLoading={isLoading}
-          isError={isError}
           onClickLike={handleOnClickLike}
         />
         <DialogWithFilters

@@ -1,9 +1,3 @@
-import axios, { AxiosResponse } from 'axios';
-
-const instance = axios.create({
-  baseURL: 'http://localhost:8000/',
-});
-
 export type IResponce<DataType> = {
   total: number;
   page: number;
@@ -24,7 +18,7 @@ export type IImage = {
   image: string;
   thumbnail: string;
   user: string;
-}
+};
 
 export type IAd = {
   id: string;
@@ -36,19 +30,5 @@ export type IAd = {
   views: number;
   user: string;
   price: number;
-  images: Array<IImage>
+  images: Array<IImage>;
 };
-
-export const getAds = (
-  params?: Partial<GetAdsParams>
-): Promise<AxiosResponse<IResponce<IAd>>> =>
-  instance.get('/api/ads', {
-    params,
-  });
-
-export const getAdDetails = (
-  params: Partial<GetAdsParams>
-): Promise<AxiosResponse<IResponce<IAd>>> =>
-  instance.get('/api/ads', {
-    params,
-  });

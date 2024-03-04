@@ -11,7 +11,6 @@ import 'react-toastify/dist/ReactToastify.css';
 interface ListOfAdCardsProps {
   listOfAds: Array<IAd> | null;
   isLoading: boolean;
-  isError: boolean;
   likedItems: Array<string>;
   onClickLike: (id: string) => void;
 }
@@ -20,7 +19,6 @@ export default function ListOfAdCards({
   listOfAds,
   likedItems,
   isLoading,
-  isError,
   onClickLike,
 }: ListOfAdCardsProps) {
   if (!listOfAds || isLoading) {
