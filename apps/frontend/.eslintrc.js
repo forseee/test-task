@@ -9,6 +9,9 @@ module.exports = {
     'airbnb/hooks',
     '../../.eslintrc.json'
   ],
+  'rules':{
+    'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }],
+  },
   'parserOptions': {
     project: path.resolve(__dirname, '../../apps/frontend/tsconfig.json'),
   },
